@@ -11,9 +11,32 @@
 |
 */
 
+// Login action - exercise 7
+Route::filter('isAuth', function()   
+{
+    if(Auth::check())
+    {
+        return View::make('user.loggedform');
+    }
+});
+
+Route::get('login', array('before' => 'isAuth', function()
+{        return View::make('login.loginform')
+            ->with('title', 'Login');
+}));
+
+Route::post('login', 'UserController@login');
+
+Route::get('logout',function(){
+    Auth::logout();
+    Session::flush();
+    return Redirect::to('login');
+});
+// End of exercise 7
+
 Route::get('/', function()
 {
 	return View::make('hello');
 });
-
+ // Test action - exercise 4
 Route::get('test', 'TestController@showTest');
