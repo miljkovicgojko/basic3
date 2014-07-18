@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+@extends('layout.master')
+@section('content')
     <head>
         <title>{{ $title }}</title>
     </head>
@@ -18,4 +18,4 @@
             </form>
         </div>
     </body>
-</html>
+@stop 

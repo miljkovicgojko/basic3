@@ -1,10 +1,10 @@
-<html>
-    
-    <body>
-        <h2>Ovo je forma ulogovanog korisnika</h2><br>
+@extends('layout.master')
 
-        <a href="{{ URL::to('logout') }}">Logout</a>
-        
-    </body>
-</html>
+@section('content')
+
+    <h2>Logged form!</h2><br>
+
+    <a href="{{ URL::to('logout') }}">Logout</a>
+ 
+@stop 
 
