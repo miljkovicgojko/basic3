@@ -10,6 +10,7 @@ class UserSeeder extends Seeder
            'last_name'  => 'Miljkovic',
            'email'      => 'gojko@gmail.com',
            'password'   => Hash::make('gojko'),
+           'language'   => 'srb'
             
         ));
     }

@@ -29,7 +29,7 @@ class UserController extends BaseController {
             if (Auth::attempt($userdata)) 
             {
                 // validation successful!
-                return View::make('user.loggedform');
+                return View::make('user.profile');
             } 
             else 
             {
@@ -38,4 +38,33 @@ class UserController extends BaseController {
             }
         }
     } // end function login
+    
+    public function showLogin()
+    {
+        return View::make('login.loginform')
+            ->with('title', 'Login');
+    }
+    
+    public function showLanguage($lang)
+    {
+        App::setLocale($lang);
+        
+        $user = User::find(Auth::user()->id);
+        $user->language = $lang;
+        $user->update();
+        
+        return Redirect::back();
+    }
+ 
+    public function logout() 
+    {
+        Auth::logout();
+        Session::flush();
+        return Redirect::to('login');
+    }
+    
+    public function profile()
+    {
+        return View::make('user.profile');
+    }
 }

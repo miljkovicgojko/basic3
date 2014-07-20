@@ -1,42 +1,25 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
 
-// Login action - exercise 7
+// Localization - exercise 9
+Route::get('language/{lang}', 'UserController@showLanguage');
+// End localization
+
 Route::filter('isAuth', function()   
 {
     if(Auth::check())
     {
-        return View::make('user.loggedform');
+        return Redirect::to('/');
     }
 });
 
-Route::get('login', array('before' => 'isAuth', function()
-{        return View::make('login.loginform')
-            ->with('title', 'Login');
-}));
+Route::get('login',array('before' => 'isAuth', 'uses' => 'UserController@showLogin'));
 
 Route::post('login', 'UserController@login');
 
-Route::get('logout',function(){
-    Auth::logout();
-    Session::flush();
-    return Redirect::to('login');
-});
-// End of exercise 7
+Route::get('logout', 'UserController@logout');
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'UserController@profile');
+
  // Test action - exercise 4
 Route::get('test', 'TestController@showTest');

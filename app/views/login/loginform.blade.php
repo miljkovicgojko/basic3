@@ -1,21 +1,27 @@
 @extends('layout.master')
 @section('content')
-    <head>
-        <title>{{ $title }}</title>
-    </head>
-    
-    <body>
-        <h1>Login</h1>
-        <div>
-            <?php echo '<form method="post" action="'. URL::to('login') .'">';?>
-                <label>Email:</label><br>
-                <input type="text" id="email" name="email"><br><br>
+{{ Form::open() }} 
+<h1>{{Lang::get('strings.Login')}}</h1>
+    <div>
+        <?php echo '<form method="post" action="' . URL::to('login') . '">'; ?>
+        {{Lang::get('strings.Email')}}:<br>
+        {{ Form::text('email', Input::old('email'), array(
+                    'placeholder' => 'email@emai.com', 
+                    'id' => 'email', 
+                    'name' => 'email' )) 
+        }}
+        <br><br>
+
+        {{Lang::get('strings.Password')}}:<br>
+        {{ Form::password('password', array(
+                    'id' => "password", 
+                    'name' => "password" )) 
+        }}
+        <br><br>
         
-                <label>Password:</label><br>
-                <input type="password" id="password" name="password"><br><br>
-        
-                <button class="btn btn-success" type="submit" value="Login">Login</button>
-            </form>
-        </div>
-    </body>
+        <button class="btn btn-success" type="submit" value="Login">{{Lang::get('strings.Login')}}</button>
+            
+        </form>
+    </div>
+{{ Form::close() }} 
 @stop 

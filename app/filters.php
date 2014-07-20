@@ -13,7 +13,7 @@
 
 App::before(function($request)
 {
-	//
+    //
 });
 
 
@@ -45,7 +45,7 @@ Route::filter('auth', function()
 		{
 			return Redirect::guest('login');
 		}
-	}
+	}    
 });
 
 
