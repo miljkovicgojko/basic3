@@ -6,6 +6,11 @@
     <div class="image">
         <img id="myImage" onclick="changeImage()" src="images/logo_red.gif">
     </div>
+  
+    <div>
+       @include('layout.navbar')
+    </div> 
+    
     @if(Auth::check())
         <div class="lang">
             <a href="{{ URL::to('language/en')}}">EN</a> <a href="{{URL::to('language/srb')}}">SRB</a>
