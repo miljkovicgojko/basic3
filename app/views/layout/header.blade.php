@@ -4,7 +4,7 @@
     </div>
 
     <div class="image">
-        {{HTML::image('images/logo_red.gif','alt-text')}}
+        <img id="myImage" onclick="changeImage()" src="images/logo_red.gif">
     </div>
     @if(Auth::check())
         <div class="lang">

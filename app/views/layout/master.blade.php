@@ -11,5 +11,7 @@
         </div>
          
         @include('layout.footer')
-    </body>     
+    </body>  
+    {{ HTML::script('http://code.jquery.com/jquery-1.11.0.min.js'); }}
+    {{ HTML::script('js/main.js'); }}
 </html> 
