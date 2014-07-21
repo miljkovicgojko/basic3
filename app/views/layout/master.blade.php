@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        {{ HTML::style('css/style.css'); }}
+    </head>
     <body>
         @include('layout.header')
         

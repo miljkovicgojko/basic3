@@ -1,6 +1,7 @@
 @extends('layout.master')
 @section('content')
 {{ Form::open() }} 
+<div class="content">
 <h1>{{Lang::get('strings.Login')}}</h1>
     <div>
         <?php echo '<form method="post" action="' . URL::to('login') . '">'; ?>
@@ -20,8 +21,9 @@
         <br><br>
         
         <button class="btn btn-success" type="submit" value="Login">{{Lang::get('strings.Login')}}</button>
-            
+
         </form>
     </div>
+</div>
 {{ Form::close() }} 
 @stop 
