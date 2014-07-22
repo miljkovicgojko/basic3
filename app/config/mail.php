@@ -28,7 +28,8 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.mailgun.org',
+	//'host' => 'smtp.mailgun.org',
+        'host' => 'smtp.gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,7 +42,8 @@ return array(
 	|
 	*/
 
-	'port' => 587,
+	//'port' => 587,
+        'port' => 465,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,8 +56,8 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
-
+	//'from' => array('address' => null, 'name' => null),
+        'from' => array('address' =>'gojkom224@gmail.com', 'name' => 'Auth'),
 	/*
 	|--------------------------------------------------------------------------
 	| E-Mail Encryption Protocol
@@ -67,8 +69,8 @@ return array(
 	|
 	*/
 
-	'encryption' => 'tls',
-
+	//'encryption' => 'tls',
+        'encryption' => 'ssl',
 	/*
 	|--------------------------------------------------------------------------
 	| SMTP Server Username
@@ -80,8 +82,8 @@ return array(
 	|
 	*/
 
-	'username' => null,
-
+	//'username' => null,
+         'username' => 'gojkom224@gmail.com',
 	/*
 	|--------------------------------------------------------------------------
 	| SMTP Server Password
@@ -93,7 +95,7 @@ return array(
 	|
 	*/
 
-	'password' => null,
+	'password' => 'ledeni30',
 
 	/*
 	|--------------------------------------------------------------------------

@@ -23,7 +23,8 @@ class UserController extends BaseController {
             // create our user data for the authentication
             $userdata = array(
                 'email' => Input::get('email'),
-                'password' => Input::get('password')
+                'password' => Input::get('password'),
+                'active' => 1
             );
             // attempt to do the login
             if (Auth::attempt($userdata)) 
@@ -34,7 +35,8 @@ class UserController extends BaseController {
             else 
             {
                 // validation not successful, send back to form	
-                return Redirect::to('login');
+                return Redirect::to('login')
+                        ->with('message', 'Bed credentional or account not active!' );
             }
         }
     } // end function login

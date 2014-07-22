@@ -1,8 +1,18 @@
 @extends('layout.master')
+
 @section('content')
+
 {{ Form::open() }} 
+
 <div class="content">
-<h1>{{Lang::get('strings.Login')}}</h1>
+    <h1>{{Lang::get('strings.Login')}}</h1>
+
+    <div class="container">
+        @if(Session::has('message'))
+            <p class="alert">{{ Session::get('message') }}</p>
+        @endif
+    </div>
+
     <div>
         <?php echo '<form method="post" action="' . URL::to('login') . '">'; ?>
         {{Lang::get('strings.Email')}}:<br>
@@ -20,8 +30,10 @@
         }}
         <br><br>
         
-        <button class="btn btn-success" type="submit" value="Login">{{Lang::get('strings.Login')}}</button>
-
+        {{ Form::submit( Lang::get('strings.Login'), array('class' => 'btn btn-success'))}}
+        <div>
+            <p>Need an account? {{HTML::link('account/signup', 'Signup here!')}}</p>
+        </div>
         </form>
     </div>
 </div>

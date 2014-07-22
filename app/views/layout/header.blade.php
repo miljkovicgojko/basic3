@@ -3,10 +3,6 @@
         <h2>{{Lang::get('strings.Basic knowledge course')}}</h2>
     </div>
 
-    <div class="image">
-        <img id="myImage" onclick="changeImage()" src="images/logo_red.gif">
-    </div>
-  
     <div>
        @include('layout.navbar')
     </div> 
